@@ -1,0 +1,36 @@
+#Building Images with Dockerfile
+docker build --no-cache -t nginxplus .
+
+#List Images
+docker images
+
+#Remove Images
+docker rmi imageid
+
+#Start container
+docker run --name mynginx1 -p 80:80 -d nginx
+docker run --name mynginx1 -p 8080:80 -d -v nginx.conf:/etc/nginx/nginx.conf nginx
+docker run --name mynginx1 -p 8080:80 -d -v C:\test\nginx.conf:/etc/nginx/nginx.conf nginx
+
+
+docker [start|stop] mynginx1
+
+#Check processes
+docker ps
+docker ps -a
+
+#Checking logs
+docker logs container-name
+docker logs -f container-name
+
+#Get into container shell
+docker exec -it container-name /bin/bash
+
+#Remove running container
+docker rm -f container-name
+
+#Start docker-compose 
+docker-compose -f docker-compose.yaml up -d
+
+#Stop docker-compose
+docker-compose -f docker-compose.yaml down
