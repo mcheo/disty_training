@@ -1,0 +1,5 @@
+{
+    "service_name": "nginx",
+    "collector_host": "zipkin",
+    "collector_port": 9411
+  }
